@@ -18,8 +18,8 @@ class DBManager:
                                         autoflush=False, 
                                         bind=DBManager.__engine))
 
-        global dao
-        dao = DBManager.__session
+        global db_session
+        db_session = DBManager.__session
     
     @staticmethod
     def init_db():
@@ -27,4 +27,4 @@ class DBManager:
         from model import Base
         Base.metadata.create_all(bind=DBManager.__engine)
 
-dao = None        
+db_session = None        
