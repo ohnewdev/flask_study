@@ -3,6 +3,7 @@ from flask import Flask
 from diary.settings import ProdConfig
 from diary.assets import assets
 from diary import controller
+from flask import render_template
 from flask_stormpath import StormpathError, StormpathManager, User, login_required, login_user, logout_user, user
 
 def create_app(config_object=ProdConfig):
