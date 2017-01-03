@@ -44,7 +44,7 @@ def register_stormpath(diary):
     diary.config['SECRET_KEY'] = '3WotnDW3JOwjnkXWnmot/yX6dKgQSDHDWAEPHW5a5F8'
     diary.config['STORMPATH_API_KEY_FILE']='./diary/apiKey.properties'
     diary.config['STORMPATH_APPLICATION']='Diary'
-    diary.config['STORMPATH_ENABLE_LOGIN'] = True
+    diary.config['STORMPATH_ENABLE_LOGIN'] = False
     diary.config['STORMPATH_ENABLE_REGISTRATION'] = True
     diary.config['STORMPATH_ENABLE_LOGOUT'] = True
     stormpath_manager = StormpathManager(diary)
@@ -65,6 +65,7 @@ def register_errorhandlers(diary):
 def register_blueprints(diary):
     """Register Flask blueprints."""
     diary.register_blueprint(controller.app.blueprint)
+    diary.register_blueprint(controller.authentification.blueprint)
     return None
 
 def not_found(error):
