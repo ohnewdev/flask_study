@@ -42,7 +42,7 @@ def register_database(diary):
 def register_stormpath(diary):
     diary.config['DEBUG'] = True
     diary.config['SECRET_KEY'] = '3WotnDW3JOwjnkXWnmot/yX6dKgQSDHDWAEPHW5a5F8'
-    diary.config['STORMPATH_API_KEY_FILE']='apiKey.properties'
+    diary.config['STORMPATH_API_KEY_FILE']='./diary/apiKey.properties'
     diary.config['STORMPATH_APPLICATION']='Diary'
     diary.config['STORMPATH_ENABLE_LOGIN'] = True
     diary.config['STORMPATH_ENABLE_REGISTRATION'] = True
