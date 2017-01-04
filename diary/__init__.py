@@ -66,6 +66,8 @@ def register_blueprints(diary):
     """Register Flask blueprints."""
     diary.register_blueprint(controller.app.blueprint)
     diary.register_blueprint(controller.authentification.blueprint)
+    diary.register_blueprint(controller.timeline.blueprint)
+    diary.register_blueprint(controller.semantic.blueprint)
     return None
 
 def not_found(error):
