@@ -68,6 +68,7 @@ def register_blueprints(diary):
     diary.register_blueprint(controller.authentification.blueprint)
     diary.register_blueprint(controller.timeline.blueprint)
     diary.register_blueprint(controller.semantic.blueprint)
+    diary.register_blueprint(controller.editor.blueprint)
     return None
 
 def not_found(error):
