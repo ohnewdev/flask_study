@@ -21,11 +21,28 @@
 	<script src="{{ url_for('static', filename='js/modernizr.js') }}"></script>
 <script type="application/javascript">
     $(document).ready(function () {
+    	$('#showSetting').click(function() {
+
+            $('#category')
+                .modal({
+                    closable: false,
+                    offset: 400,
+                    onDeny: function() {},
+                    onApprove: function() {}
+                }).modal('show');
+        });
+
+
+        $("#accordion").accordion();
+        $('#example1').progress();
+
+        $('.ui.accordion').accordion();
+    	
         $("#my-calendar").zabuto_calendar();
      // Modal open
         $('#showEditor').click(function() {
             editorInit();
-            $('.ui.long.modal')
+            $('#modalEditor')
             .modal({
                 closable : false,
                 offset : 400,
@@ -91,6 +108,7 @@
 	        </div>
 	        <div class="twelve wide column">
 	        	        <button id="showEditor" class="ui right floated button">Write Today!!!</button>
+	        	        <button id="showSetting" class="ui right floated button">Write Categoty!!</button>
 	        	        
 	        	        	<section id="cd-timeline" class="cd-container">
 		<div class="cd-timeline-block">
@@ -170,9 +188,108 @@
 			</div> <!-- cd-timeline-content -->
 		</div> <!-- cd-timeline-block -->
 	</section>
+
+    <div class="ui long modal" id="category">
+        <div class="header">
+
+            <div class="ui sizer vertical segment">
+                <div class="ui large header">Awesome Diary</div>
+                <p>
+                    <div class="ui grid">
+                        <div class="fourteen wide column">
+                            <div class="ui teal progress" data-percent="74" id="example1">
+                                <div class="bar"></div>
+                                <div class="label">74% done</div>
+                            </div>
+                        </div>
+                        <div class="one wide column">
+                            <div class="actions">
+                                <div class="ui green ok inverted button">
+                                    <i class="checkmark icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </p>
+            </div>
+
+
+
+
+
+
+
+        </div>
+        <div class="content">
+
+            <div class="ui segment">
+                <div class="ui styled accordion">
+                    <div class="title active">
+                        <i class="dropdown icon"></i> How do you feeling today?
+                    </div>
+                    <div class="content active">
+                        <p class="transition visible" style="display: block !important;">
+                            <div class="five ui buttons">
+                                <button class="ui purple button">Sad</button>
+                                <button class="ui blue button">Gloomy</button>
+                                <button class="ui green button">Not bad<</button>
+                                <button class="ui pink button">Happy</button>
+                                <button class="ui red button">Awesome!!</button>
+                            </div>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i> How about this photo?
+                    </div>
+                    <div class="content">
+                        <p class="transition hidden">
+                            <div class="ui three doubling cards">
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="http://blogfiles11.naver.net/20131230_106/dage24_1388363858662fJEKu_JPEG/%C7%C7%C0%DA%B9%E410.JPG">
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="http://semantic-ui.com/images/avatar/large/elliot.jpg">
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="image">
+                                        <img src="http://blogfiles1.naver.net/20160721_165/artatelier1_1469083996099ut2NR_JPEG/%B9%CC%BC%FA%B9%E8%BF%EC%B1%E2_%282%29.jpg">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </p>
+                    </div>
+                    <div class="title">
+                        <i class="dropdown icon"></i> The photo is .... ?
+                    </div>
+                    <div class="content">
+                        <p class="transition hidden">직장인 미술학원 :: 퇴근 후 취미 너로 정했다 !</p>
+                        <p class="transition hidden">http://blog.naver.com/artatelier1?Redirect=Log&logNo=220768026022</p>
+                    </div>
+
+                    <div class="title">
+                        One of the people you follow like this...
+
+                    </div>
+                    <div class="content">
+                        <p class="transition hidden">Cute dog</p>
+                        <p class="transition hidden">Cute dogs come in a variety of shapes and sizes. Some cute dogs are cute for their adorable faces, others for their tiny stature, and even others for their massive size. Many people also have their own barometers for what makes
+                            a cute dog.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
 	
 
-<div class="ui long modal">
+<div class="ui long modal" id="modalEditor">
     <div class="header">Awesome Diary</div>
     <div class="content">
         <div id="editor"></div>
